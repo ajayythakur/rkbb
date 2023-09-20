@@ -1,0 +1,8 @@
+.carousel-img {
+    height: 300px;
+    /* width: 100% ; */
+    margin: auto;
+}
+.carousel .thumbs{
+    display: none;
+}
