@@ -2,7 +2,7 @@ import React from 'react'
 // import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 
 const Footer = () => {
-  return (
+  return ( 
     <div>
 {/* Remove the container if you want to extend the Footer to full width. */}
 <div className="container my-5">

@@ -5,7 +5,7 @@ import '../CSS/Carousel.css'
 
 const Carouse = () => {
   return (
-    <div>
+    <div> 
         <Carousel>
                 <div>
                     <img src="https://i.ytimg.com/vi/0AyLRV8SAIQ/maxresdefault.jpg" className='carousel-img' alt='404' />

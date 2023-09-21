@@ -1,0 +1,25 @@
+.product-page{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 2px solid red;
+}
+.outer-card{
+    height: fit-content;
+    width: 300px;
+    border: 1px solid black;
+    display: flex;    
+    flex-direction: column;
+    /* align-items: center; */
+    border-radius: 5px;
+    margin: 20px 10px 0px 10px;
+
+}
+.image img{
+    height: 200px;
+    width: 100%;
+    border-radius: 5px;
+}

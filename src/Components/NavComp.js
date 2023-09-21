@@ -1,19 +1,81 @@
-import React from 'react'
-import '../CSS/NavComp.css'
+import React, { useState } from 'react'
+import '../App.css'
+import {
+  MDBNavbar,
+  MDBContainer,
+  MDBNavbarBrand,
+  MDBNavbarToggler,
+  MDBNavbarItem,
+  MDBNavbarLink,
+  MDBCollapse,
+  MDBBtn,
+  MDBIcon, 
+  MDBNavbarNav,
+  MDBInputGroup
+} from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
 
 const NavComp = () => {
+  const [showNavNoTogglerSecond, setShowNavNoTogglerSecond] = useState(false);
   return (
-    <div>
-        <div className='navbar'>
-            <div className='smallogo'>Logo</div>
-            <div className='nav-items'>
-            <div>HOME</div>
-            <div>ABOUT US</div>
-            <div>PRODUCTS</div>
-            </div>
-        </div>
-    </div>
-  )
+    <MDBNavbar expand='lg' light bgColor='light'>
+      <MDBContainer fluid>
+        <MDBNavbarBrand href='#'>RAKESH KHAD BEEJ BHANDAR</MDBNavbarBrand>
+        <MDBNavbarToggler
+          type='button'
+          data-target='#navbarTogglerDemo02'
+          aria-controls='navbarTogglerDemo02'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
+          onClick={() => setShowNavNoTogglerSecond(!showNavNoTogglerSecond)}
+        >
+          <MDBIcon icon='bars' fas />
+        </MDBNavbarToggler>
+        <MDBCollapse navbar show={showNavNoTogglerSecond}>
+          <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
+            <MDBNavbarItem>
+              <MDBNavbarLink active aria-current='page' href='#'>
+                <Link className='link' to='/'>
+                Home
+                </Link>
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink>
+                <Link className='link' to='/products'>
+                Products
+                </Link>
+                </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink>
+                <Link className='link' to='/about_us'>
+                About Us 
+                </Link>
+                </MDBNavbarLink>
+            </MDBNavbarItem>
+            {/* <MDBNavbarItem>
+              <MDBNavbarLink disabled href='#' tabIndex={-1} aria-disabled='true'>
+                Disabled
+              </MDBNavbarLink>
+            </MDBNavbarItem> */}
+          </MDBNavbarNav>
+          <MDBInputGroup tag="form" className='d-flex w-auto mb-3'>
+            <input className='form-control' placeholder="Type query" aria-label="Search" type='Search' />
+            <MDBBtn outline>Search</MDBBtn>
+          </MDBInputGroup>
+        </MDBCollapse>
+      </MDBContainer>
+    </MDBNavbar>
+  );
 }
 
 export default NavComp
+// <div className='navbar'>
+//     <div className='smallogo'>Logo</div>
+//     <div className='nav-items'>
+//     <div>HOME</div>
+//     <div>ABOUT US</div>
+//     <div>PRODUCTS</div>
+//     </div>
+// </div>

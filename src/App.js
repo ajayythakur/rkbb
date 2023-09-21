@@ -1,11 +1,13 @@
 import React from 'react'
-import Collection from './Collection'
-
+import NavComp from './Components/NavComp'
+import Routing from './Routing/Routing'
+import Footer from './Components/Footer'
 const App = () => {
   return (
     <div>
-      <h1 style={{textAlign:'center'}}>RAKESH KHAD BEEJ BHANDAR</h1>
-      <Collection/>
+      <NavComp/>
+      <Routing/>
+      <Footer/>
     </div>
   )
 }

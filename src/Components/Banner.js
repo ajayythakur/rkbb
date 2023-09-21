@@ -1,6 +1,6 @@
 import React from 'react'
 import '../CSS/Banner.css'
-import logo from '../Assests/logo4.png'
+import logo from '../Assests/logo3.png'
 
 const Banner = () => {
   return (
@@ -8,6 +8,6 @@ const Banner = () => {
       <img src={logo} alt='logo' className='logo' />
     </div>
   )
-}
+} 
 
 export default Banner

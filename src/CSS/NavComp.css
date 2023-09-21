@@ -10,7 +10,7 @@
     width: 50%;
 }
 .nav-items{
-    height: fit-content;
+    height: fit-content; 
     width: 50%;
     display: flex;
     justify-content: space-evenly;
