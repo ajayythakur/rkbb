@@ -1,37 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+// import { MDBBtn } from 'mdb-react-ui-kit';
 import '../CSS/ProductCard.css'
-import { MDBBtn } from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
 const Products = () => {
-  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetch("https://backend-for-react-blog.onrender.com/food")
-      .then((res) => res.json())
-      .catch((err) => console.log(err))
-      .then(res => setData(res));
-  }, [])
-
-  console.log(data);
   return (
-    <div className='product-page'>
-      {
-       data && data.map((n) => (
-          <div className='outer-card'>
-            <div className='image'><img src={n.img} alt='404' /></div>
-            <div className='detail'>{n.title} </div>
-            <div className='btn'>
-              <MDBBtn className='me-1' color='success'>
-                Success
-              </MDBBtn>
-              <MDBBtn color='info'>
-                Info
-              </MDBBtn>
-            </div>
-          </div>
-        ))
-      }
-
+    <>
+    <div>
+      <div className='category'>
+    <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Select Category </button>
     </div>
+
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Category</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body small">
+    <div className='list'>
+    <div className='btn btn-success'><Link className='prod-link' to='/seeds'> Seed</Link></div>
+    <div className='btn btn-success'><Link className='prod-link' to='/pesticides'>Pesticide</Link></div>
+    <div className='btn btn-success'><Link className='prod-link' to='/herbicides'>Herbicide</Link></div>
+    <div className='btn btn-success'><Link className='prod-link' to='/fertilizers'>Fertilizer</Link></div>
+    </div>
+  </div>
+</div>
+    </div>
+    </>
   )
 }
 
