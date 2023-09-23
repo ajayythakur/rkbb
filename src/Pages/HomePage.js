@@ -1,11 +1,13 @@
 import React from 'react'
 import Banner from '../Components/Banner'
 import Carouse from '../Components/Carouse'
+import IntroComp from '../Components/IntroComp'
 
 const HomePage = () => {
   return (
     <div>
-      <Banner/>
+      <IntroComp/>
+      <Banner/> 
       <Carouse/>       
     </div>
   )

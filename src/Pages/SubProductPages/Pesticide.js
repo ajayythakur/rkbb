@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { MDBBtn } from 'mdb-react-ui-kit';
 import Products from '../Products';
+import '../../CSS/ProductCard.css'
+import Pest_IMG from '../../Assests/pesticides2.png'
 
 const Pesticide = () => {
   const [data, setData] = useState([]);
@@ -12,12 +14,15 @@ const Pesticide = () => {
       .then(res => setData(res));
   }, [])
   return (
-    <div>
+    <div> 
       <Products/>
+      <div className='prod-img'>
+        <img src={Pest_IMG} alt='pesticide' />
+      </div>
           <div className='product-page'>
       {
-       data && data.map((n) => (
-          <div className='outer-card'>
+       data && data.map((n,index) => (
+          <div className='outer-card' key={index}>
             <div className='image'><img src={n.img} alt='404' /></div>
             <div className='detail'>{n.title} </div>
             <div className='btn'>
